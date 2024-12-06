@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebeto's E-commerce Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather-style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bebeto's Store</div>
+        <nav>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="e-commerce.html">Home</a></li> <!-- Home Page -->
+                <li><a href="fashion.html">Fashion</a></li> <!-- Fashion Page -->
+                <li><a href="crafts.html">Crafts</a></li> <!-- Crafts Page -->
+                <li><a href="organic_food.html">Organic Food</a></li> <!-- Organic Food Page -->
+                <li><a href="about.html">About</a></li> <!-- About Page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Contact Page -->
+               </ul>
+            </nav>   
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <div class="user-icons">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </header>
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+          <div class="img_section">
+            <div class="default_info">
+              <h2 class="default_day">Sunday</h2>
+              <span class="default_date">5 december 2023 </span>
+              <div class="icons">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="" />
+                <h2 class="weather_temp">22°C</h2>
+                <h3 class="cloudtxt">Overcast Clouds</h3>
+              </div>
+            </div>
+          </div>
+          <div class="content_section">
+            <form>
+              <input
+                type="text"
+                placeholder="Search Location"
+                class="input_field"
+              />
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+
+            <div class="day_info">
+              <div class="content">
+                <p class="title">NAME</p>
+                <span class="value">BUJUMBURA</span>
+              </div>
+              <div class="content">
+                <p class="title">TEMP</p>
+                <span class="value">23°C</span>
+              </div>
+              <div class="content">
+                <p class="title">HUMIDITY</p>
+                <span class="value">2%</span>
+              </div>
+              <div class="content">
+                <p class="title">WIND SPEED</p>
+                <span class="value">2.92 Km/h</span>
+              </div>
+            </div>
+
+            <div class="list_content">
+              <ul>
+                <li>
+                  <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                  <span>Sat</span>
+                  <span class="day_temp">23°C</span>
+                </li>
+                <li>
+                  <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                  <span>Sat</span>
+                  <span class="day_temp">23°C</span>
+                </li>
+                <li>
+                  <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                  <span>Sat</span>
+                  <span class="day_temp">23°C</span>
+                </li>
+                <li>
+                  <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                  <span>Sat</span>
+                  <span class="day_temp">23°C</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    <script src="weather.js"></script>
+</body>
+</html>

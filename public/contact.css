@@ -1,0 +1,240 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('assets/pictures/product4.jpg');
+    background-color: #5e5e5e;
+    color: #ffffff;
+}
+
+/* Header Styles */
+header {
+    background-color: #131313;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff9900;
+}
+
+header .search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+header .search-bar button {
+    padding: 0.5rem;
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .search-bar button:hover {
+    background-color: #e68a00;
+}
+
+header .user-icons a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Main Content Styles */
+main {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    text-align: center;
+    font-size: 16px;
+    color: green;
+    margin-top: 20px;
+}
+
+/* WhatsApp and SMS Floating Button Styling */
+.whatsapp-btn-container,
+.sms-btn-container {
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.whatsapp-btn-container {
+    left: 10px;  /* Positioning WhatsApp button to the left */
+}
+
+.sms-btn-container {
+    right: 10px;  /* Positioning SMS button to the right */
+}
+
+.whatsapp-btn-container a,
+.sms-btn-container a {
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn-container a {
+    background-color: #25d366;
+}
+
+.sms-btn-container a {
+    background-color: #34b7f1;
+}
+
+.whatsapp-btn-container a img,
+.sms-btn-container a img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-btn-container span,
+.sms-btn-container span {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.whatsapp-btn-container a:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+.sms-btn-container a:hover {
+    background-color: #007BB5;
+    transform: scale(1.1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #131313;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #ff9900;
+}
+
+footer .social-media a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.2);
+}

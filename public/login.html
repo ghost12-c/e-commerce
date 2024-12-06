@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bebeto's Store</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bebeto's Store</div>
+        <nav>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="e-commerce.html">Home</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="crafts.html">Crafts</a></li>
+                <li><a href="organic-food.html">Organic Food</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="login-form">
+            <h2>Login to Your Account</h2>
+            <form id="login-form" action="login-process.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+
+                <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="icons/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="icons/whatsapp-icon.png" alt="Whatsapp"></a>
+            <a href="#"><img src="icons/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us: mezimorel12@gmail.com</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

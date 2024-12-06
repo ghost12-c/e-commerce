@@ -1,0 +1,139 @@
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #5e5e5e;
+    background-size:contain;
+    background-attachment: fixed;
+    background-color: #220f0f;
+    background-image: url('assets/pictures/product 00.jpg');
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #131313;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #ff9900;
+}
+
+/* About Section */
+.about-section {
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem; /* Added space for better alignment */
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #221212;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #221212;
+}
+
+/* Weather Button */
+.weather-btn-container {
+    text-align: center;
+    margin: 2rem 0; /* Added margin for spacing */
+}
+
+.weather-btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.weather-btn:hover {
+    background-color: #ff9900;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #131313;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff9900;
+}
+
+footer .social-media a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .about-section h1 {
+        font-size: 2rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .weather-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

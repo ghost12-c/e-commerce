@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion - Bebeto's Store</title>
+    <link rel="stylesheet" href="fashion.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bebeto's Store</div>
+        <nav>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="e-commerce.html">Home</a></li>
+                <li><a href="fashion.html" class="active">Fashion</a></li>
+                <li><a href="crafts.html">Crafts</a></li>
+                <li><a href="organic-food.html">Organic Food</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="featured-products">
+            <h2>Featured Fashion Products</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="assets/pictures/product1.jpg" alt="Product 1">
+                    <h3>Informatic Items</h3>
+                    <p>$20.00</p>
+                    <button id="pay-now">Pay Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="icons/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="icons/whatsapp-icon.png" alt="WhatsApp"></a>
+            <a href="#"><img src="icons/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us: mezimorel12@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('pk_test_51QRE0vHDdVbopsxsubp7W55pm0Qmfdhn1e7yqyIGcIlfeXY1sSqLaRe7bzFlYPI6dWEPWvCjBtkbmsjbXnAwfHCH00VJg4KPeW'); // Replace with your Stripe public key
+
+        document.getElementById('pay-now').addEventListener('click', async () => {
+            const response = await fetch('/create-checkout-session', { method: 'POST' });
+            const session = await response.json();
+
+            const result = await stripe.redirectToCheckout({ sessionId: session.sessionId });
+
+            if (result.error) {
+                alert(result.error.message);
+            }
+        });
+    </script>
+</body>
+</html>

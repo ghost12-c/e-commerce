@@ -1,0 +1,411 @@
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('assets/pictures/product4.jpg');
+    background-color: #5e5e5e;
+    color: #ffffff;
+}
+
+/* Header Styles */
+header {
+    background-color: #131313;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff9900;
+}
+
+header .search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+header .search-bar button {
+    padding: 0.5rem;
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .search-bar button:hover {
+    background-color: #e68a00;
+}
+
+header .user-icons a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('assets/pictures/product2.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    z-index: 2;
+    position: relative;
+}
+
+.hero button {
+    padding: 0.8rem 2rem;
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Featured Products and Categories */
+.featured-products, .categories {
+    padding: 2rem;
+    text-align: center;
+}
+
+.featured-products .product-grid, .categories .category-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.product-item p {
+    font-size: 1.2rem;
+    color: #ff9900;
+}
+
+.product-item button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.categories .category {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.categories .category:hover {
+    background-color: #ff9900;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Reviews Section */
+.reviews .review-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.reviews .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reviews .review-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.reviews p:last-child {
+    color: #ff9900;
+    font-size: 1.2rem;
+}
+/* Review Form Section */
+.review-form {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+}
+
+.review-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.review-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.review-form label {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    color: #555;
+}
+
+.review-form input, 
+.review-form textarea, 
+.review-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.review-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.review-form input:focus, 
+.review-form textarea:focus, 
+.review-form select:focus {
+    border-color: #ff9900;
+}
+
+.review-form select {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.review-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.review-form button:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Common Container Styles */
+.profile-container, .order-tracking-container {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Section Headings */
+.profile-container h2, 
+.order-tracking-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form Styles */
+.profile-container form, 
+.order-tracking-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-container label, 
+.order-tracking-container label {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    color: #555;
+}
+
+/* Input Fields */
+.profile-container input, 
+.order-tracking-container input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.profile-container input:focus, 
+.order-tracking-container input:focus {
+    border-color: #ff9900;
+}
+
+/* Buttons */
+.profile-container button, 
+.order-tracking-container button {
+    padding: 0.8rem 1.5rem;
+    background-color: #ff9900;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-container button:hover, 
+.order-tracking-container button:hover {
+    background-color: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Order Status Paragraph */
+#order-status {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #131313;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #ff9900;
+}
+
+footer .social-media a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.2);
+}

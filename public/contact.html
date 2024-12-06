@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bebeto's Store</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Bebeto's Store</div>
+        <nav>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="e-commerce.html">Home</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="crafts.html">Crafts</a></li>
+                <li><a href="organic-food.html">Organic Food</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <p id="response-message"></p>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-btn-container">
+        <a="whatsapp-btn" href="https://wa.me/+25779909070" target="_blank">
+            <img src="icons/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+        <span>Contact Us</span>
+    </div>
+
+    <!-- Send SMS Button -->
+    <div class="sms-btn-container">
+        <a class="sms-btn" href="sms.html">
+            <img src="icons/send-sms.png" alt="SMS">
+        </a>
+        <span>Send Us SMS</span>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="icons/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="icons/whatsapp-icon.png" alt="Whatsapp"></a>
+            <a href="#"><img src="icons/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us: mezimorel12@gmail.com</p>
+        </div>
+    </footer>
+
+    <!-- Include Firebase SDK and mail.js script -->
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        // Your Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBkgcMm_mOfSmrsCi9pyz99hKFbBplDJ9I",
+            authDomain: "mybebetos-1ff29.firebaseapp.com",
+            databaseURL: "https://mybebetos-1ff29-default-rtdb.firebaseio.com",
+            projectId: "mybebetos-1ff29",
+            storageBucket: "mybebetos-1ff29.firebasestorage.app",
+            messagingSenderId: "697065820009",
+            appId: "1:697065820009:web:e01afd540036df2ee937f8"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Form submission handler
+        document.getElementById("contactForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Save the message to Firebase
+            const contactFormRef = ref(database, "contactFormDB");
+            const newContactFormRef = push(contactFormRef);
+
+            set(newContactFormRef, {
+                name: name,
+                email: email,
+                message: message
+            })
+            .then(() => {
+                document.getElementById("response-message").textContent = "Your message has been sent successfully!";
+                document.getElementById("contactForm").reset();
+            })
+            .catch((error) => {
+                document.getElementById("response-message").textContent = "Error sending message. Please try again.";
+                console.error("Error: ", error);
+            });
+        });
+    </script>
+</body>
+</html>

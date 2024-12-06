@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Bebeto's Store</title>
+    <link rel="stylesheet" href="stripe.css">
+    <!-- Stripe.js Library -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">Bebeto's Store</div>
+    <nav>
+        <ul id="nav-menu" class="nav-menu">
+            <li><a href="e-commerce.html">Home</a></li>
+            <li><a href="fashion.html">Fashion</a></li>
+            <li><a href="crafts.html">Crafts</a></li>
+            <li><a href="organic-food.html">Organic Food</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="payment-section">
+        <h1>Proceed to Payment</h1>
+        <p>Click the button below to securely pay for your products via Stripe.</p>
+        <button id="pay-button">Proceed to Payment</button>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </div>
+    <div class="social-media">
+        <a href="#"><img src="icons/facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="icons/whatsapp-icon.png" alt="Whatsapp"></a>
+        <a href="#"><img src="icons/instagram-icon.png" alt="Instagram"></a>
+    </div>
+    <div class="contact-info">
+        <p>Contact us: mezimorel12@gmail.com</p>
+    </div>
+</footer>
+
+<script>
+    // Initialize Stripe with your public key (replace with your actual Stripe public key)
+    const stripe = Stripe('pk_test_51QRE0vHDdVbopsxsubp7W55pm0Qmfdhn1e7yqyIGcIlfeXY1sSqLaRe7bzFlYPI6dWEPWvCjBtkbmsjbXnAwfHCH00VJg4KPeW');  // Example test public key
+
+    // Set up the payment button functionality
+    const payButton = document.getElementById('pay-button');
+
+    payButton.addEventListener('click', function () {
+        // Call your backend to create a checkout session
+        fetch('/create-checkout-session', {
+            method: 'POST',
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (sessionId) {
+            return stripe.redirectToCheckout({ sessionId: sessionId });
+        })
+        .then(function (result) {
+            if (result.error) {
+                alert(result.error.message);
+            }
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>

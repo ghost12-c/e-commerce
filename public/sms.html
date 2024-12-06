@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebeto's E-commerce Platform</title>
+    <link rel="stylesheet" href="send-sms.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Bebeto's Store</div>
+        <nav>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="e-commerce.html">Home</a></li> <!-- Home Page -->
+                <li><a href="fashion.html">Fashion</a></li> <!-- Fashion Page -->
+                <li><a href="crafts.html">Crafts</a></li> <!-- Crafts Page -->
+                <li><a href="organic_food.html">Organic Food</a></li> <!-- Organic Food Page -->
+                <li><a href="about.html">About</a></li> <!-- About Page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Contact Page -->
+            </ul>
+        </nav>
+
+        <div class="user-icons">
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </header>
+
+    <div class="whatsapp-container">
+        <h2>Envoyer un SMS</h2>
+        <form id="smsForm">
+            <div class="form-group">
+                <label for="to">Numéro de destinataire (SMS):</label>
+                <input type="text" id="to" name="to" placeholder="+257XXXXXXX" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Votre message ici..." rows="5" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+            <p id="response" class="hidden"></p>
+        </form>
+        <a href="e-commerce.html">Retour au home</a>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="icons/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="icons/whatsapp-icon.png" alt="whatsapp"></a>
+            <a href="#"><img src="icons/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us: mezimorel12@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('smsForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const to = document.getElementById('to').value;
+            const message = document.getElementById('message').value;
+
+            // Vos informations Twilio
+            const accountSid = "AC5859522d1823571816745bcb58ee790f";
+            const authToken = "52c593d175d141dc7c5fdb253ff16924";
+            const twilioPhoneNumber = "+17752955973";
+
+            // Correct URL with backticks for string interpolation
+            const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
+
+            // Création de l'objet FormData
+            const formData = new FormData();
+            formData.append('To', to);
+            formData.append('From', twilioPhoneNumber);
+            formData.append('Body', message);
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(`${accountSid}:${authToken}`), // Corrected authentication header
+                    },
+                    body: formData,
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    document.getElementById('response').classList.remove('hidden');
+                    document.getElementById('response').innerText = "Message envoyé avec succès!";
+                } else {
+                    throw new Error(result.message || "Une erreur s'est produite.");
+                }
+            } catch (error) {
+                document.getElementById('response').classList.remove('hidden');
+                document.getElementById('response').innerText = `Erreur: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
